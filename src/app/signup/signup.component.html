@@ -5,10 +5,13 @@
     <div class="col-md-4">
         <h2 style="text-align:center;">Signup</h2>
         
-            FirstName: <input type="text" class="form-control"  [(ngModel)]="firstName" /><br>
-            Email: <input type="text" class="form-control"[(ngModel)]="email" /><br>
-            Password: <input type="text" class="form-control" [(ngModel)]="password" /><br>
-            <button type="button" class="btn btn-primary" (click)="printData()" >Signup</button>
+            FirstName: <input type="text" class="form-control"  [(ngModel)]="firstName" required /><br>
+            Email: <input type="email" class="form-control"[(ngModel)]="email" required/><br>
+            Password: <input type="password" class="form-control" [(ngModel)]="password" required/><br>
+            gender:
+            male:<input type="radio"  [(ngModel)]="gender" value="male"/>
+            female:<input type="radio"  [(ngModel)]="gender" value="female"/><br><br/>
+            <button type="button" class="btn btn-primary" (click)="signup()" >Signup</button>
        
     </div>
 </div>
