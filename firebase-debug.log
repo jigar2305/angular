@@ -1,0 +1,25 @@
+[debug] [2022-08-24T12:22:04.268Z] ----------------------------------------------------------------------
+[debug] [2022-08-24T12:22:04.271Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting:github
+[debug] [2022-08-24T12:22:04.272Z] CLI Version:   11.7.0
+[debug] [2022-08-24T12:22:04.272Z] Platform:      win32
+[debug] [2022-08-24T12:22:04.273Z] Node Version:  v16.17.0
+[debug] [2022-08-24T12:22:04.274Z] Time:          Wed Aug 24 2022 17:52:04 GMT+0530 (India Standard Time)
+[debug] [2022-08-24T12:22:04.275Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-24T12:22:04.388Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-24T12:22:04.389Z] > authorizing via signed-in user (jigarkp786@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\angular\exp-tracker
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
