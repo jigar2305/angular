@@ -10,7 +10,8 @@ import { UserService } from '../user.service';
 })
 export class HomeComponent implements OnInit {
   categorys:Array<any> = []
-  
+  categoryName:string="" 
+  display=false
   constructor(private userService: UserService, private toastr: ToastrService, private router: Router) { }
 
 
@@ -24,6 +25,16 @@ export class HomeComponent implements OnInit {
       this.categorys = res;
     })
   }
+  viewcategory(categoryId:any){
+    this.userService.getcategoryByIdApi(categoryId).subscribe(res=>{
+      // alert(resp.roleName)
+      this.categoryName = res.categoryName
+      this.display=true 
+       
+    },err=>{
+      this.toastr.error(err)
+    })
+}
   deletecategory(categoryId:any){
     console.log(categoryId+"categoryId");
     

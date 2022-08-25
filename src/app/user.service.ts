@@ -18,5 +18,8 @@ export class UserService {
    deletecategory(categoryId:any):Observable<any>{
     return this.http.delete(environment.url+"admin/category/"+categoryId)
    }
+   getcategoryByIdApi(categoryId:any):Observable<any>{
+    return this.http.get(environment.url+"admin/category/"+categoryId)
+   }
 
 }
