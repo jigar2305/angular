@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthTokenService } from '../auth-token.service';
 import { SessionService } from '../session.service';
 
 
@@ -12,7 +13,7 @@ import { SessionService } from '../session.service';
 })
 export class LoginComponent{
 
-  constructor(private toastr:ToastrService, private router:Router,private sessionservice:SessionService){
+  constructor(private toastr:ToastrService, private router:Router,private sessionservice:SessionService,private autht:AuthTokenService){
 
   }
 
@@ -25,14 +26,17 @@ export class LoginComponent{
     }
     this.sessionservice.loginApi(user).subscribe(res =>{
       if(res){
-        let authToken = res.data.authToken 
-        console.log(authToken+"1234567890");
-               
+        let authToken = res.data.authToken        
         localStorage.setItem("authToken",authToken)
+        this.autht.authToken = authToken
         this.toastr.success("login done")
         this.router.navigateByUrl("/category")
       }
-    })
+    },err=>{
+      this.toastr.error("login fail")
+      this.router.navigateByUrl("/login")
+    }
+    )
     
   }
 
