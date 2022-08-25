@@ -15,10 +15,7 @@ export class TokenInterceptor implements HttpInterceptor {
     
 
     //body 
-    if (request.method.toLowerCase() == "post") { // 
-
-
-
+    if (request.method.toLowerCase() == "post"||request.method.toLowerCase() == "delete") { 
       if (request.body instanceof FormData) {
         request = request.clone({
           body: request.body.append("authToken", authToken)
@@ -26,11 +23,8 @@ export class TokenInterceptor implements HttpInterceptor {
       } else {
         console.log(typeof (request.body));
         console.log(request.body);
-
       }
-
     }
-
     console.log("auth Token interceptor.....")
     return next.handle(request.clone({ setHeaders: { authToken } })); // go forward with header  
 

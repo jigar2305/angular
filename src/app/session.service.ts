@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,12 +12,10 @@ export class SessionService {
     
    }
    signupApi(user: any): Observable<any> {
-    return this.http.post("http://localhost:8787/public/signup", user)
+    return this.http.post(environment.url+"public/signup", user)
    }
    loginApi(user: any): Observable<any>{
-    return this.http.post("http://localhost:8787/public/login", user)
+    return this.http.post(environment.url+"public/login", user)
    }
-   categoryApi(category:any):Observable<any>{
-    return this.http.post("http://localhost:8787/admin/category", category)
-   }
+   
 }

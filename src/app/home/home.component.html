@@ -1,1 +1,18 @@
 <p>home works!</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of categorys">
+            <td>{{r.categoryId}}</td>
+            <td>{{r.categoryName}}</td>
+            <td><span (click)="deletecategory(r.categoryId)">delete</span></td>
+        </tr>
+    </tbody>
+
+</table>

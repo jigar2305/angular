@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { SessionService } from '../session.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-category',
@@ -10,7 +10,7 @@ import { SessionService } from '../session.service';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor(private toastr:ToastrService, private router:Router,private sessionservice:SessionService){
+  constructor(private toastr:ToastrService, private router:Router,private userservice:UserService){
 
   }
 
@@ -22,7 +22,7 @@ export class CategoryComponent implements OnInit {
       "categoryName" : this.category
     }
 
-    this.sessionservice.categoryApi(category).subscribe(res =>{
+    this.userservice.categoryApi(category).subscribe(res =>{
       if (res) {
         this.toastr.success("category added...")
         this.router.navigateByUrl("/home")
