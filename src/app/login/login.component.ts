@@ -23,13 +23,14 @@ export class LoginComponent{
       "email" : this.email,
       "password":this.password
     }
-
-    console.log(this.email);
-    console.log(this.password);
     this.sessionservice.loginApi(user).subscribe(res =>{
       if(res){
+        let authToken = res.data.authToken 
+        console.log(authToken+"1234567890");
+               
+        localStorage.setItem("authToken",authToken)
         this.toastr.success("login done")
-        this.router.navigateByUrl("/signup")
+        this.router.navigateByUrl("/category")
       }
     })
     

@@ -11,9 +11,12 @@ export class SessionService {
     
    }
    signupApi(user: any): Observable<any> {
-    return this.http.post("http://localhost:8787/signup", user)
+    return this.http.post("http://localhost:8787/public/signup", user)
    }
    loginApi(user: any): Observable<any>{
-    return this.http.post("http://localhost:8787/login", user)
+    return this.http.post("http://localhost:8787/public/login", user)
+   }
+   categoryApi(category:any):Observable<any>{
+    return this.http.post("http://localhost:8787/admin/category", category)
    }
 }

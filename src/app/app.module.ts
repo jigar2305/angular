@@ -9,8 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
+import { CategoryComponent } from './category/category.component';
+import { TokenInterceptor } from './token.interceptor';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
