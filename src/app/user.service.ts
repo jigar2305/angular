@@ -21,5 +21,8 @@ export class UserService {
    getcategoryByIdApi(categoryId:any):Observable<any>{
     return this.http.get(environment.url+"admin/category/"+categoryId)
    }
+   updatecategoryApi(category:any):Observable<any>{
+    return this.http.put(environment.url+"admin/category", category)
+   }
 
 }

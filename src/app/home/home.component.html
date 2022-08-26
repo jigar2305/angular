@@ -15,7 +15,8 @@
                     <td>{{r.categoryId}}</td>
                     <td>{{r.categoryName}}</td>
                     <td><span (click)="deletecategory(r.categoryId)">delete</span>||
-                        <span (click)="viewcategory(r.categoryId)">view</span>
+                        <span (click)="viewcategory(r.categoryId)">view</span>||
+                        <a routerLink="/upadatecategory/{{r.categoryId}}">update</a>
                     </td>
                 </tr>
             </tbody>

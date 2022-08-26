@@ -15,6 +15,7 @@ import { CategoryComponent } from './category/category.component';
 import { TokenInterceptor } from './token.interceptor';
 import {DialogModule} from 'primeng/dialog';
 import { LogoutComponent } from './logout/logout.component';
+import { UpdateroleComponent } from './updaterole/updaterole.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     HomeComponent,
     CategoryComponent,
-    LogoutComponent
+    LogoutComponent,
+    UpdateroleComponent
   ],
   imports: [
     BrowserModule,

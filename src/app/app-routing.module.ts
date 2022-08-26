@@ -6,8 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SignupComponent } from './signup/signup.component';
+import { UpdateroleComponent } from './updaterole/updaterole.component';
 
 const routes: Routes = [
+  {
+    path:'',
+    redirectTo:'/login',
+    pathMatch:'full'
+  },
   {
     component: SignupComponent, path: "signup"
   },
@@ -22,7 +28,11 @@ const routes: Routes = [
   },
   {
     component: CategoryComponent, path: "category",canActivate:[AuthTokenGuard]
+  },
+  {
+    component: UpdateroleComponent, path: "upadatecategory/:categoryId",canActivate:[AuthTokenGuard]
   }
+
 
 
 ];

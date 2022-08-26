@@ -3,7 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -12,22 +13,6 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor() { }
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let authToken = localStorage.getItem("authToken") as string
-    
-
-    //body 
-    if (request.method.toLowerCase() == "post"||request.method.toLowerCase() == "delete") { 
-      if (request.body instanceof FormData) {
-        request = request.clone({
-          body: request.body.append("authToken", authToken)
-        })
-      } else {
-        console.log(typeof (request.body));
-        console.log(request.body);
-      }
-    }
-    console.log("auth Token interceptor.....")
     return next.handle(request.clone({ setHeaders: { authToken } })); // go forward with header  
-
-
   }
 }
