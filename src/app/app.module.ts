@@ -38,7 +38,7 @@ import { AdduserComponent } from './adduser/adduser.component';
     ToastrModule.forRoot(),
     HttpClientModule,
     DialogModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
