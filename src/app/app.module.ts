@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +16,7 @@ import { TokenInterceptor } from './token.interceptor';
 import {DialogModule} from 'primeng/dialog';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateroleComponent } from './updaterole/updaterole.component';
+import { AdduserComponent } from './adduser/adduser.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UpdateroleComponent } from './updaterole/updaterole.component';
     HomeComponent,
     CategoryComponent,
     LogoutComponent,
-    UpdateroleComponent
+    UpdateroleComponent,
+    AdduserComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { UpdateroleComponent } from './updaterole/updaterole.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    DialogModule
+    DialogModule,
+    ReactiveFormsModule,
 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],

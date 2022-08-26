@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdduserComponent } from './adduser/adduser.component';
 import { AuthTokenGuard } from './auth-token.guard';
 import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     component: SignupComponent, path: "signup"
+  },
+  {
+    component: AdduserComponent, path: "adduser"
   },
   {
     component: LoginComponent, path: "login"
