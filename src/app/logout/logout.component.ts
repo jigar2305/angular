@@ -14,6 +14,7 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.authTokenService.authToken=""
+    localStorage.setItem("authToken","")
     this.tostr.success("logout done")
     this.router.navigateByUrl("/login")
   }
